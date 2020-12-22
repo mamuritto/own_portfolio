@@ -29,6 +29,12 @@ header {
     margin: auto;
 }
 
+.wrapper__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 80px;
+}
+
 .navbar {
     display: flex;
     align-items: center;
@@ -55,6 +61,7 @@ header {
 .nav__logo {
     font-size: 34px;
     font-weight: 600;
+    padding: 15px 0;
 }
 
 .logo__piece {
@@ -204,6 +211,10 @@ background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
     color: white;
 }
 
+.number__link:hover {
+    color: red;
+}
+
 /* footer styling end  */
 
 
@@ -217,7 +228,12 @@ background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
     font-family: 'Poppins', sans-serif;
     padding-top: 15vh;
 }
+.wrapper__about__header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 80px;
 
+}
 .about__title {
     position: relative;
     font-family: 'Ubuntu', sans-serif;
@@ -324,6 +340,12 @@ background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
     font-family: 'Poppins', sans-serif;
     padding-top: 15vh;
     background: url(../images/back.jpg) ;
+}
+
+.wrapper__skills__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 80px;
 }
 
 .skills__title {
@@ -449,6 +471,12 @@ background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
     background: url(../images/back.jpg) ;
 }
 
+.wrapper__contact__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 80px;
+}
+
 .contact__title {
     position: relative;
     font-family: 'Ubuntu', sans-serif;
@@ -539,6 +567,12 @@ background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
 .contact__subname {
     color: rgb(206, 200, 200);
 }
+.contact__subname a {
+    color: rgb(206, 200, 200);
+}
+.contact__subname a:hover {
+    color: red;
+}
 
 .contact__fields1 {
     display: flex;
@@ -588,10 +622,6 @@ background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
     background: none;
 }
 
-
-
-
-
 .field__name {
     margin-right: 10px;
 }
@@ -604,20 +634,583 @@ background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
     width: 100%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Contact styling end  */
+
+
+/* Burger styling start */
+
+.burger {
+    width: 50px;
+    height: 25px; 
+    cursor: pointer;
+    position: relative;
+    display: none;
+}
+
+.burger__line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: firebrick;
+    position: absolute;
+    left: 0;
+    transition: .3s all linear;
+}
+
+.burger__line__first {
+    top: 0%;
+}
+
+.burger__line__second, .burger__line__third {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger__line__fourth {
+    bottom: 0%;
+}
+
+.burger__active .burger__line__first {
+    opacity: 0;
+}
+.burger__active .burger__line__fourth{
+    opacity: 0;
+} 
+
+.burger__active .burger__line__second {
+    transform: translateY(-50%) rotate(30deg);
+}
+
+.burger__active .burger__line__third {
+    transform: translateY(-50%) rotate(-30deg);
+}
+
+/* Burger styling end */
+
+/* Adaptive burger start  */
+
+@media (max-width: 767px) {
+    .header {
+        padding: 0;
+    }
+    .wrapper__home {
+        margin: auto 0 auto 0;
+    }
+    .wrapper {
+        padding: 10px 60px;
+    }
+    .wrapper__header {
+        margin-top: 20px;
+    }
+    .wrapper__about__header {
+        margin-top: 20px;
+    }
+    .wrapper__skills__header {
+        margin-top: 20px;
+    }
+    .wrapper__contact__header {
+        margin-top: 20px;
+    }
+    .burger {
+        margin-top: 6px;
+        display: block;
+        z-index: 11;
+    }
+    .navbar {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #333;
+        z-index: 10;
+        align-items: flex-start;
+        padding: 75px;
+        transform: translateX(-100%);
+        transition: .2s all linear;
+    }
+  
+    .menu__li {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+        text-align: center;
+
+    }
+    .menu__li:first-child {
+        margin-top: 30px;
+    }
+    .menu__li:last-child {
+        margin-bottom: 0;
+    }
+    .menu__link {
+        font-size: 42px;
+        line-height: 48px;
+        margin-left: 0;
+    }
+
+    .burger__active {
+        transform: translateX(0);
+    }
+
+    .nav__logo {
+        padding: 0;
+    }
+
+    /* .home {
+        display: flex;
+        background: url("../images/mamur-back.jpg") no-repeat center;
+        height: 100vh;
+        background-size: cover;
+        font-family: "Ubuntu", sans-serif;
+    } */
+
+
+}
+/* Adaptive burger end  */
+
+/* Adaptive Intro Start  */
+@media (max-width: 1024px){
+    .home {
+        display: flex;
+        background: url(../images/mamur-back-12.jpg) no-repeat center;
+        height: 100vh;
+        background-size: cover;
+        font-family: "Ubuntu", sans-serif;
+    }
+}
+@media (max-width: 930px) {
+    .home {
+        background: url("../images/mamur-back-1.jpg") no-repeat center;
+        background-size: cover;
+    }
+    .wrapper__home {
+        margin: 30% 0 auto 0;
+    }
+
+    header {
+        padding-left: 0;
+    }
+
+    .home__text2 h1 {
+        font-size: 68px;
+    }
+
+    .home__text1 h2 {
+        font-size: 38px;
+    }
+
+    .home__text3 h2 {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 857px) {
+    .wrapper {
+        padding: 0 60px;
+    }
+}
+
+@media (max-width: 818px) {
+    .wrapper {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 779px) {
+    .home__text2 h1 {
+        font-size: 64px;
+    }
+
+    .home__text1 h2 {
+        font-size: 35px;
+    }
+
+    .home__text3 h2 {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 767px) {
+    .home {
+        background: url("../images/mamur-back-2.jpg") no-repeat center;
+        background-size: cover;
+    }
+    .home__text2 h1 {
+        font-size: 54px;
+    }
+
+    .home__text1 h2 {
+        font-size: 30px;
+    }
+
+    .home__text3 h2 {
+        font-size: 30px;
+    }
+
+    .wrapper {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 727px) {
+    .home__text2 h1 {
+        font-size: 44px;
+    }
+
+    .home__text1 h2 {
+        font-size: 26px;
+    }
+
+    .home__text3 h2 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 633px) {
+    .home {
+        background: url("../images/mamur-back-12.jpg") no-repeat center;
+        background-size: cover;
+    }
+    .home__text2 h1 {
+        font-size: 42px;
+    }
+
+    .home__text1 h2 {
+        font-size: 22px;
+    }
+
+    .home__text3 h2 {
+        font-size: 22px;
+    }
+
+}
+
+@media (max-width: 630px) {
+    .wrapper__home {
+        margin: 35% 0 auto 0;
+    }
+}
+
+@media (max-width: 612px) {
+    .home {
+        background: url("../images/mamur-back-13.jpg") no-repeat center;
+        background-size: cover;
+    }
+
+    .home__text2 h1 {
+        font-size: 38px;
+    }
+
+    .home__text1 h2 {
+        font-size: 20px;
+    }
+
+    .home__text3 h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 570px) {
+    .wrapper__home {
+        margin: 40% 0 auto 0;
+    }
+
+    .home__text2 h1 {
+        font-size: 36px;
+    }
+
+    .home__text1 h2 {
+        font-size: 19px;
+    }
+
+    .home__text3 h2 {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 503px) {
+    .wrapper__home {
+        margin: 47% 0 auto 0;
+    }
+
+    .home__text2 h1 {
+        font-size: 34px;
+    }
+
+    .home__text1 h2 {
+        font-size: 19px;
+    }
+
+    .home__text3 h2 {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 492px) {
+    .home {
+        background: url("../images/mamur-back-15.jpg") no-repeat center;
+        background-size: cover;
+    }
+}
+
+@media (max-width: 481px) {
+    .home {
+        background: url("../images/mamur-back-16.jpg") no-repeat center;
+        background-size: cover;
+    }
+    .home__text2 h1 {
+        font-size: 26px;
+    }
+
+    .home__text1 h2 {
+        font-size: 17px;
+    }
+
+    .home__text3 h2 {
+        font-size: 17px;
+    }
+    .wrapper__home {
+        margin: 52% 0 auto 0;
+    }
+    .home__text3 h2 {
+        margin: 0;
+    }
+
+}
+
+@media (max-width: 444px) {
+    .wrapper__home {
+        margin: 57% 0 auto 0;
+    }
+    .wrapper {
+        padding: 20px;
+    }
+}
+
+
+
+/* @media (max-width: 857px) {
+    .home {
+        background: url('../images/mamur-back-4.jpg');
+        background-size: cover;
+    }
+} */
+
+/* Adaptive Intro End  */
+
+/* adaptive ABOUT start */
+
+
+
+/* adaptive ABOUT end */
+
+/* adaptive SKILLS start  */
+@media (max-width: 750px){
+    .skills {
+        height: 100%;
+    }
+    .skills__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .skills__title {
+        margin-bottom: 70px;
+    }
+
+    .skills__left {
+        margin-right: 0;
+        margin-bottom: 60px;
+    }
+
+    .skills__left__title {
+        text-align: center;
+    }
+
+    .skills__right {
+        margin-bottom: 60px;
+    }
+
+    .bars:last-child {
+        margin-bottom: 0;
+    }
+
+    .footer {
+        position: relative;
+    }
+}
+
+
+/* adaptive SKILLS end  */
+
+/* FOOTER adaptive start  */
+
+@media (max-width: 624px) {
+    .wraper__footer {
+        padding: 15px 60px;
+    }
+    .wraper__footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer__logo__social-links {
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+
+    .footer__number__container {
+        margin: 0 auto;
+    }
+
+    .logo__item-mail {
+        margin-right: 0;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .skills__left__title {
+        font-size: 23px;
+    }
+
+    .skills__left__subtitle {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 360px) {
+    .skills__left__title {
+        font-size: 21px;
+    }
+
+    .skills__left__subtitle {
+        font-size: 13px;
+    }
+}
+
+
+
+@media (max-width: 395px) {
+    .wraper__footer {
+        padding: 15px;
+    }
+}
+
+/* FOOTER adaptive end  */
+
+/* Contact adaptive start  */
+
+@media (max-width: 1080px){
+    .contact {
+        height: 100%;
+    }
+    .contact__content {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 60px;
+    }
+    .contact__title {
+        margin-bottom: 60px;
+    }
+    .contact__left {
+        margin: 0 auto;
+        width: 70%;
+        padding-bottom: 40px;
+    }
+    .contact__left__title {
+        text-align: center;
+    }
+    
+    .contact__icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .contact__row {
+        display: flex;
+        flex-direction: column;
+    }
+    .contact__row i {
+        margin: 0 auto;
+    }
+    .contact__name {
+        text-align: center;
+    }
+    .contact__info {
+        margin-left: 0;
+    }
+
+    .contact__right {
+        margin: 0 auto;
+        width: 70%;
+
+    }
+
+    .contact__left__title {
+        font-size: 22px;
+    }
+    .contact__right__title {
+        text-align: center;
+        font-size: 22px;
+    }
+
+}
+
+@media (max-width: 850px){
+    .contact__left {
+        margin: 0 auto;
+        width: 80%;
+        padding-bottom: 40px;
+    }
+    .contact__right {
+        width: 80%;
+    }
+}
+
+@media (max-width: 720px){
+    .contact__left {
+        margin: 0 auto;
+        width: 90%;
+        padding-bottom: 40px;
+    }
+    .contact__right {
+        width: 90%;
+    }
+}
+
+@media (max-width: 655px){
+    .contact__left {
+        margin: 0 auto;
+        width: 100%;
+        padding-bottom: 40px;
+    }
+    .contact__right {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px){
+    .contact__left__subtitle {
+        margin-bottom: 30px;
+    }
+    .contact__icons {
+        display: flex;
+        flex-direction: column;
+    }
+    .contact__row {
+        margin-bottom: 20px;
+    }
+
+    .wrapper__contact {
+        padding: 0 30px;
+    }
+}
+
+/* Contact adaptive end  */
 
 
 

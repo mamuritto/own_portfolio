@@ -636,6 +636,39 @@ background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
 
 /* Contact styling end  */
 
+/* Gallery styling start  */
+
+.gallery {
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 15vh;
+    background: url(../images/back.jpg) ;
+}
+
+/* .wrapper__gallery {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 80px;
+} */
+
+.gallery img {
+    transition: 0.2s; 
+    padding: 15px;
+    width: 30%;
+}
+
+.wrapper__gallery {
+    text-align: center;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+
+
+/* Gallery styling end  */
+
 
 /* Burger styling start */
 
